@@ -3,7 +3,7 @@ node{
      git 'https://github.com/Sandeep0045/maven-app.git'
    }
    
-   stage('compile package')
+   stage('compile package'){
       sh "mvn -B -DskipTests clean package"
    }
 
