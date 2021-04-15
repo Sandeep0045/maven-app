@@ -3,8 +3,10 @@ node{
      git 'https://github.com/Sandeep0045/maven-app.git'
    }
    
-   stage('compile package'){
-      sh "mvn -B -DskipTests clean package"
-   }
-
+   
+  stage('Compile-Package'){
+      // Get maven home path
+      def mvnHome =  tool name: 'maven-3', type: 'maven'   
+      sh "${mvnHome}/bin/mvn package"
+  }
 }
